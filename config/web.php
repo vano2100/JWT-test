@@ -19,6 +19,12 @@ $config = [
                 'application/json' => 'yii\web\JsonParser',
             ],
         ],
+        'jwt' => [
+            'class' => \sizeg\jwt\Jwt::class,
+            'key' => 'secret',
+            // You have to configure ValidationData informing all claims you want to validate the token.
+            'jwtValidationData' => \app\components\JwtValidationData::class,
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
